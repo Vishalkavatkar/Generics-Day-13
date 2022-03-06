@@ -2,8 +2,6 @@ package refactor2GenericMethod;
 
 import java.util.Scanner;
 
-import refactor1Max.FindMax;
-
 public class max {
 	 //main method to find maximum
 	public static void main(String[] args) {
@@ -11,8 +9,7 @@ public class max {
 		//creating scanner to take inputs from system
 		Scanner sc = new Scanner(System.in);
 		
-		//creating an object
-		FindMax max = new FindMax();
+		FindMax maxx;
 		
 		System.out.println("------Find Maximum------");
 		
@@ -36,10 +33,10 @@ public class max {
 				System.out.print(" Please enter the third Integer value: ");
 				Integer third = sc.nextInt();
 				
-				//passing the values to the method
-				max.genericMax(first, second, third);
+			    maxx = new FindMax<Integer>(first, second, third);  
+			    maxx.genericMax();
 				break;
-			}
+			}		
 			case 2:
 			{
 				System.out.print(" Please enter the first float value: ");
@@ -52,8 +49,9 @@ public class max {
 				Float third = sc.nextFloat();
 				
 				//passing the values to the method
-				max.genericMax(first, second, third);
-				break;
+				maxx = new FindMax<Float>(first, second, third);  
+			    maxx.genericMax();
+			    break;
 			}
 			case 3:
 			{
@@ -67,8 +65,9 @@ public class max {
 				String third = sc.next();
 				
 				//passing the values to the method
-				max.genericMax(first, second, third);
-				break;
+				maxx = new FindMax<String>(first, second, third);  
+			    maxx.genericMax();
+			    break;
 			}
 			case 4:
 				System.out.println(" You have exited from the program!!");

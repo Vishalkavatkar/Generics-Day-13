@@ -15,10 +15,14 @@ public class FindMax <T extends Comparable<T>>{
 	}
 	 //creating a method 
 	public void genericMax() {
+		
+		 //calling print method
+		T printMax = genericMax(this.first, this.second, this.third);                  
+		printgenericMax(printMax);
 	}
 	
 	//making the method generic type T
-	public <T extends Comparable <T>> void genericMax(T first, T second, T third) {
+	public <T extends Comparable <T>> T genericMax(T first, T second, T third) {
 		
 		//considering first is max and assigning max to first
 		T max = first;
@@ -40,7 +44,13 @@ public class FindMax <T extends Comparable<T>>{
 			position = "third";
 		}
 		System.out.println("The maximum input is in " + position + " position and the input is : "   + max);
+	return max;
+		
 	}
+	//print method using generics	
+		public void printgenericMax(T prntMax) {                                          
+		System.out.println(" The largest value is : " + prntMax);
+		}
 	
 
 }
